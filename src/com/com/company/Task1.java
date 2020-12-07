@@ -56,15 +56,11 @@ public class Task1 {
 
     public static int getNumberOfNumbers(String line) {
         int countnum = 0;
-        String[] sarr = line.split(" ");
-        for (String str : sarr) {
-            try {
-                Integer.parseInt(str);
-            } catch (NumberFormatException e) {
+        for (int i = 0; i < line.length(); i++) {
+            if (Character.isDigit(line.charAt(i)))
                 countnum++;
-            }
         }
         System.out.print("Number of numbers: ");
-        return sarr.length - countnum;
+        return countnum;
     }
 }
